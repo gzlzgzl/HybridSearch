@@ -54,15 +54,11 @@ public class Main {
             }
             Point p = new Point(temp, "Query Point");
 
-            ArrayList<Integer> ks = new ArrayList<>();
+            PriorityQueue<NSWNode> pq = new PriorityQueue<>();
+            long t1 = System.currentTimeMillis();
+            pq = nsw.findNearestKF(p,k);
 
-            ks.add(40);ks.add(4000);ks.add(40000);ks.add(200000);
-
-            for(int kk:ks){
-                PriorityQueue<NSWNode> pq = new PriorityQueue<>();
-                long t1 = System.currentTimeMillis();
-                pq = nsw.findNearestKF(p,kk);
-                //post-query filtering
+            //post-query filtering
 
             ArrayList<Point> pq2 = new ArrayList<>();
             for(NSWNode node:pq){
@@ -71,10 +67,9 @@ public class Main {
                 }
             }
 
-                long t2 = System.currentTimeMillis();
-                //System.out.println("The nearest "+k+" are: "+pq);
-                System.out.println("Time used: "+(t2-t1)+"ms");
-            }
+            long t2 = System.currentTimeMillis();
+            System.out.println("The nearest "+k+" are: "+pq);
+            System.out.println("Time used: "+(t2-t1)+"ms");
         }
     }
 }
