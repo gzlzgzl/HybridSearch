@@ -19,7 +19,7 @@ public class VpNode {
         }
         double currentDistance = content.distance(queryPoint);
         if(currentDistance <= Vptree.knnThreshold){
-            //in-query filtering
+            //concurrent filtering
 
             if(content.passesFilter()){
                 Vptree.maxheap.add(content);

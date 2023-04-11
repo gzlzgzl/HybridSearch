@@ -112,7 +112,7 @@ public class NSWGraph {
             return maxheap;
         }
         NSWNode nearestNode = findNearestOne(queryPoint);
-        //in-query filtering
+        //concurrent filtering
 
  //       if(nearestNode.content.passesFilter()){
             maxheap.add(nearestNode);
@@ -135,7 +135,7 @@ public class NSWGraph {
                     }
                     neighbor.visited = true;
                     visitedList.add(neighbor);
-                    //in-query filtering #2
+                    //concurrent filtering #2
  //                   if(neighbor.content.passesFilter()){
                         toAdd.add(neighbor);
  //                   }
