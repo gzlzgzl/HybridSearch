@@ -1,6 +1,6 @@
 # HybridSearch
 
-This project develops a concurrent filtering technique that speeds up hybrid search, which can be thought as a vector similarity search with additional scalar attribute filtering.
+This project develops a concurrent filtering technique that speeds up hybrid search, which can be thought of as a vector similarity search with additional scalar attribute filtering.
 
 A brief introduction to Hybrid Search is available on https://milvus.io/docs/hybridsearch.md.
 Traditionally, there have been 2 approaches to do hybrid search: pre-query filtering, which means entries are filtered before the index is built, and post-query filtering, which means entries are filtered after similarity search is complete. Both methods come with drawbacks. While pre-query filtering is inflexible against the change of filtering criteria which results in rebuilding the index, the number of results obtained from post-query filtering is not precise as the filtering outcome on similarity search results can only be estimated.
